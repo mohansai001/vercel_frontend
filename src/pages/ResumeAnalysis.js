@@ -341,9 +341,6 @@ function ResumeAnalysis() {
         hrEmail,
         rrfId,
         jobDescription,
-        selectedRole,
-        selectedLevel,
-        selectedCloudProvider,
         additionalSkills,
         ecName,
       } = sessionData;

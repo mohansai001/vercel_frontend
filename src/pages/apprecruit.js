@@ -51,16 +51,14 @@ function AppRecruit() {
   const [jdPreview, setJdPreview] = useState(null);
   const [selectedResumes, setSelectedResumes] = useState([]);
   const [ecName, setEcName] = useState('');
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedRrfId, setSelectedRrfId] = useState('');
-  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedRrfId] = useState(''); // eslint-disable-line no-unused-vars
   const [userEmail, setUserEmail] = useState('');
   const [isDuplicateModalOpen, setIsDuplicateModalOpen] = useState(false);
 
   const [duplicateCandidates, setDuplicateCandidates] = useState(new Set());
   const [evaluationResult, setEvaluationResult] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
-  const [rrfIds, setRrfIds] = useState([]);
+  const [, setRrfIds] = useState([]); // eslint-disable-line no-unused-vars
 
   const msalInstanceRef = useRef(null);
 
@@ -426,10 +424,10 @@ function AppRecruit() {
         result={evaluationResult}
         onBack={handleBackToSelection}
         selectedRoleInfo={{
-          selectedRole,
-          selectedLevel,
-          selectedCloudProvider,
-          selectedFrontendTech,
+          selectedRole: '',
+          selectedLevel: '',
+          selectedCloudProvider: '',
+          selectedFrontendTech: '',
           ecName,
         }}
         sendCandidateInfoToDB={sendCandidateInfoToDB}
