@@ -1,0 +1,48 @@
+/* Import global CSS */
+@import url('./styles/global.css');
+
+/* Global styles for TAG React App */
+html, body {
+  margin: 0;
+  padding: 0;
+  background: black;
+  color: #e0e0e0;
+  height: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  overflow-clip-margin: content-box;
+  overflow: clip;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Make all asterisks red for mandatory fields globally */
+*:not(script):not(style) {
+  color: inherit;
+}
+
+/* Target text nodes containing asterisks */
+label:contains('*'),
+.form-label:contains('*'),
+.field-label:contains('*') {
+  color: inherit;
+}
+
+/* Use JavaScript-friendly approach for asterisks */
+.mandatory-asterisk,
+.required-field::after {
+  color: #dc3545 !important;
+  font-weight: bold;
+}
+
+/* Global asterisk styling */
+*[data-required="true"]::after {
+  content: ' *';
+  color: #dc3545;
+  font-weight: bold;
+}

@@ -1,0 +1,79 @@
+.charts-container {
+  min-height: 100vh;
+  background-color: #f4f7f6;
+  padding: 20px;
+}
+
+.charts-header {
+  text-align: center;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charts-header h1 {
+  color: #10b981;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.download-report-btn {
+  background-color: #10b981;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-report-btn:hover {
+  background-color: #0d9668;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.chart-card {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 25px;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.1);
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.chart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.2);
+}
+
+@media (max-width: 768px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .charts-container {
+    padding: 15px;
+  }
+  
+  .chart-card {
+    padding: 20px;
+  }
+  
+  .charts-header h1 {
+    font-size: 24px;
+  }
+}

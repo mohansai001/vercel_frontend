@@ -1,0 +1,18 @@
+[
+  {
+    "name": "John Doe",
+    "card": "RRF001",
+    "amount": "john.doe@example.com",
+    "frequency": "Monthly",
+    "ins": "001",
+    "avatar": ""
+  },
+  {
+    "name": "Jane Smith",
+    "card": "RRF002", 
+    "amount": "jane.smith@example.com",
+    "frequency": "Yearly",
+    "ins": "002",
+    "avatar": ""
+  }
+]

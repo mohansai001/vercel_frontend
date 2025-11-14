@@ -1,0 +1,470 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .panel-container {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+    background: linear-gradient(120deg, #e6e6fa, #daf7a6);
+    min-height: 100vh;
+  }
+  
+  .calendar-container {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    height: fit-content;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #666;
+  }
+  
+  .calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+  }
+  
+  .day-header {
+    color: #999;
+    font-size: 12px;
+    padding: 5px;
+  }
+  
+  .day {
+    padding: 10px;
+    border-radius: 5px;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .day.active {
+    background-color: #e8f4ff;
+    color: #0099ff;
+  }
+  
+  .day.selected {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  .day.other-month {
+    color: #ccc;
+  }
+  
+  .btn_prevnext {
+    cursor: pointer;
+    font-size: 40px;
+    color: black;
+    border: none;
+    background: transparent;
+    margin-top: -10px;
+  }
+  
+  .meeting-date {
+    color: #666;
+    margin-bottom: 10px;
+  }
+  
+  .meeting-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin: 10px 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .meeting-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .feedback-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    margin: 10px 0;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+  
+  .feedback-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .meeting-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+  }
+  
+  .meeting-title {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .meeting-location {
+    color: #666;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 10px;
+  }
+  
+  .attendees {
+    display: flex;
+    gap: 5px;
+    margin: 15px 0;
+  }
+  
+  .attendee {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  
+  .btn {
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 16px;
+    background: #1f4e79;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-resume {
+    background: #1f4e79;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-resume a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .btn-mocha {
+    background: #1f4e79;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-mocha a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .btn-feedback {
+    background: #1f4e79;
+  }
+  
+  .btn:hover,
+  .btn-resume:hover,
+  .btn-mocha:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .company-logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f0f0f0;
+  }
+  
+  select {
+    padding: 5px;
+    margin-right: 10px;
+    font-size: 14px;
+  }
+  
+  .day-names {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .day-names div {
+    font-weight: normal;
+    color: #666;
+  }
+  
+  .main-content {
+    display: flex;
+    gap: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .main-content.shift {
+    margin-left: 110px;
+  }
+  
+  .meeting-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    position: fixed;
+    top: 65px;
+    left: -250px;
+    width: 220px;
+    height: 80%;
+    background: #1f4e79;
+    color: white;
+    overflow-y: hidden;
+    transition: left 0.3s ease;
+    z-index: 999;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .sidebar.show {
+    left: 0;
+  }
+  
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar ul li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 2px 8px;
+  }
+  
+  .sidebar ul li:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateX(5px);
+  }
+  
+  .toggle-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 15px;
+    cursor: pointer;
+    z-index: 1000;
+  }
+  
+  #toggle-sidebar-btn {
+    height: 45px;
+    background: #1f4e79;
+    color: white;
+    border: none;
+    width: 90px;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 12px;
+    margin-left: -15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+  }
+  
+  #toggle-sidebar-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .meeting-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .meeting-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .btn-teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    flex-direction: column;
+    background: #1f4e79;
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .btn-teams a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .btn-teams img {
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+  }
+  
+  .btn-teams:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .teams-logo {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    display: block;
+  }
+  
+  .join-link {
+    margin-top: 5px;
+    text-align: center;
+  }
+  
+  .modal {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  
+  .modal-content {
+    background-color: white;
+    margin: 1% auto;
+    padding: 40px;
+    border-radius: 5px;
+    max-width: 80%;
+    height: 90%;
+  }
+  
+  .close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .close-btn:hover,
+  .close-btn:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  iframe {
+    border: none;
+  }
+  
+  .custom-feedback-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .custom-popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 900px;
+    max-height: 90%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .custom-close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 10;
+  }
